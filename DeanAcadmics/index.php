@@ -80,7 +80,7 @@
         </div>
     </header>
     <!-- End Header -->
-
+<!--  -->
     <!-- ======= Hero Section ======= -->
     <section style="background-image: url('main-building.jpg'); background-size: 100% 80%;" id="hero" class="d-flex align-items-center">
         <div  class="container">
@@ -89,7 +89,8 @@
         <div class="row">
                     <div class="col-lg-8 d-flex align-items-stretch"  >
                         <div class="content">
-                        <h2 style=" color: #080808; background: #95999c;"><b>Motilal National Institute of Technology Allahabad, Prayagraj <br>मोतीलाल राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद, प्रयागराज </b></h2>
+                        <h2 style=" color: #080808; background: #95999c;"><b>Motilal National Institute of Technology Allahabad, Prayagraj
+                             <br>मोतीलाल राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद, प्रयागराज </b></h2>
                        
                           
                         </div>

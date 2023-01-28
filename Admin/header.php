@@ -137,6 +137,12 @@ if(!isset($_SESSION['userId']))
           <span>Add Grade</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="addCourse.php">
+          <i class="bi bi-grid"></i>
+          <span>Add Course</span>
+        </a>
+      </li>
 
 
       
@@ -152,6 +158,40 @@ if(!isset($_SESSION['userId']))
           <span>supply List</span>
         </a>
       </li>
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Additional Info</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="courseWise.php">
+              <i class="bi bi-circle"></i><span>Course wise students</span>
+            </a>
+          </li>
+          <li>
+            <a href="branchwise.php">
+              <i class="bi bi-circle"></i><span>Branch Wise student</span>
+            </a>
+          </li>
+
+          
+          </li>
+
+          
+        </ul>
+      </li><!-- End Forms Nav -->
+
+
+
+
+
+
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="viewMessage.php">
           <i class="bi bi-grid"></i>

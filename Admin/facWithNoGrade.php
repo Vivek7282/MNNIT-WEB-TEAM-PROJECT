@@ -14,8 +14,11 @@
 <table class="table table-striped table-advance table-hove">
     <tbody>
         <tr>
+        <th><i class="icon_profile"></i>Course</th>
             <th><i class="icon_profile"></i>Professor Id</th>
-            <th><i class="icon_profile"></i>Course</th>
+            
+            <th><i class="icon_profile"></i>No of students</th>
+            <th><i class="icon_profile"></i>Program</th>
            
 </tr>
 
@@ -23,6 +26,16 @@
 session_start();
 require_once('config.php');
 
+$query = "SELECT COUNT(*) as count FROM student WHERE Program='BTech'";
+$result = $mysqli->query($query);
+$row = $result->fetch_assoc();
+$count = $row['count'];
+
+$query = "SELECT COUNT(*) as count1 FROM student WHERE Program='MTech'";
+$result = $mysqli->query($query);
+$row = $result->fetch_assoc();
+$count1 = $row['count1'];
+//echo $count1;
 
 
     $query1= "SELECT * FROM Marks_Distribution " ;
@@ -33,21 +46,71 @@ require_once('config.php');
              $course1=$row->Course;
             //  echo $row->Course; 
              $prop_id=$row->Professor_Id;
-           
+             $program=$row->Program;
              
-             $result= mysql_query("SELECT *  FROM Marks_Table where Course='$course1' ") ;
-            //  $count=mysql_num_rows($result);
-            //  echo $count;
-            if($count!=2){
-                echo $count;
+             
+
+
+             $stmt = $mysqli->prepare("SELECT * FROM Marks_Table where Course=?");
+$stmt->bind_param("s", $course1);
+$stmt->execute();
+$result1 = $stmt->get_result();
+$count2 = mysqli_num_rows($result1);
+            //  echo $count2;
+            if( $program=="BTech" && $count2 !=$count){
+               // echo $count;
                 ?>
                 <tr>
-                 <th><?php echo $prop_id   ?> </th>
                 <th><?php echo $course1  ?> </th>
+                 <th><?php echo $prop_id   ?> </th>
+               
+
+<?php
+                if($program=="BTech" && $count2==0){
+                    ?>
+                    <th><?php echo "ALL"  ?> </th>
+                    <th><?php echo "BTech"  ?> </th>
+                    <?php
+                }
+                else{
+                    ?>
+                    <th><?php echo $count2  ?> </th>
+                    <th><?php echo "BTech"  ?> </th>
+                    <?php 
+                }
+               
+                ?>
             </tr>
                 <?php
             }
-             
+            if( $program=="MTech" && $count2!='$count1'){
+                // echo $count;
+                 ?>
+                 <tr>
+                 <th><?php echo $course1  ?> </th>
+                  <th><?php echo $prop_id   ?> </th>
+                 
+                 <?php
+                if($count2==0){
+                    ?>
+                    <th><?php echo "ALL"  ?> </th> 
+                     <th><?php echo "MTech"  ?> </th>
+                    <?php
+                }
+                else{
+                    ?>
+                    <th><?php echo $count2  ?> </th>
+                    <th><?php echo "MTech"  ?> </th>
+                    <?php 
+                }
+               
+                ?>
+
+
+             </tr>
+                 <?php
+             }
+               
  
           
 

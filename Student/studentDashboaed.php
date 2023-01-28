@@ -1,4 +1,4 @@
-<?php include('header.php');?>
+
 
 
 
@@ -7,20 +7,8 @@
   
 
   <main id="main" class="main">
-
-    
-
-
-
     <?php include('header.php')?>
-   <?php session_destroy();?>
-   <?php 
-session_start();
-require_once('config.php');
-// $id=$_SESSION['userId'];
-
-?> 
-
+   
     
     
    
@@ -58,9 +46,9 @@ require_once('config.php');
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
                 </li> -->
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
-                </li>
+                </li> -->
 
                 <!-- <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>

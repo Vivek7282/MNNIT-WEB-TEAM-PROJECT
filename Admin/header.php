@@ -1,10 +1,10 @@
 <?php 
 session_start();
-// if(!isset($_SESSION['userId']))
-// {
-//     echo '1';
-//     header('location:index.php?msg= You have to login first');
-// }
+if(!isset($_SESSION['userId']))
+{
+    //echo '1';
+    header('location:index.php?msg= You have to login first');
+}
 ?> 
 
 <!DOCTYPE html>
@@ -144,6 +144,12 @@ session_start();
         <a class="nav-link collapsed" href="facWithNoGrade.php">
           <i class="bi bi-grid"></i>
           <span>Facalty With No Grade</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="supply.php">
+          <i class="bi bi-grid"></i>
+          <span>supply List</span>
         </a>
       </li>
       <li class="nav-item">

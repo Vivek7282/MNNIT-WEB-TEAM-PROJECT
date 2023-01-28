@@ -23,14 +23,7 @@
 
 
 
-         <div class="row mb-3">
-              
-              <label for="course" class="col-sm-2 col-form-label">User ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control"  name="id2" required>
-              </div>
-                </div>
-
+        
          <div class="row mb-3">
               
               <label for="course" class="col-sm-2 col-form-label">Course Name</label>
@@ -38,13 +31,23 @@
                 <input type="text" class="form-control"  name="cname1" required>
               </div>
                 </div>
+                <label for="type">Program &emsp;&emsp;&emsp; &emsp; &emsp;   &nbsp</label>
+                    <select id="" name="program">
+                             <option value="">Select Options</option>
+                             <option value="BTech">BTech</option>
+                             <option value="MTech">MTech</option>
+                 
+  
+                    </select>
+
                 <div class="row mb-3">
               
-              <label for="course" class="col-sm-2 col-form-label">Program</label>
+              <label for="course" class="col-sm-2 col-form-label"></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"  name="program" required>
+              
               </div>
                 </div>
+
                 <div class="row mb-3">
               
               <label for="course" class="col-sm-2 col-form-label">Credit</label>
@@ -53,13 +56,7 @@
               </div>
                 </div>
 
-                <div class="row mb-3">
-              
-              <label for="course" class="col-sm-2 col-form-label">Semester</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control"  name="sem1" required>
-              </div>
-                </div> 
+                
 
          <div class="row mb-3">
               

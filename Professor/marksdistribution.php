@@ -1,6 +1,6 @@
 
 
-<?php include('header.php');?>
+
 
 
 
@@ -16,8 +16,8 @@
     Theoritical
    
     </header>
+    <?php include('header.php');?>
   
-
 
         <div class="col-lg-12">
 
@@ -31,13 +31,12 @@
 
 
 
-         <div class="row mb-3">
-              
-              <label for="course" class="col-sm-2 col-form-label">User ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control"  name="id" required>
-              </div>
-                </div>
+         
+
+
+         
+
+
 
          <div class="row mb-3">
               
@@ -47,21 +46,27 @@
               </div>
                 </div>
 
-                <div class="row mb-3">
-              
-              <label for="course" class="col-sm-2 col-form-label">Program</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control"  name="program" required>
-              </div>
-                </div>
+
+
+
+                <label for="type">Program &emsp;&emsp;&emsp; &emsp; &emsp;   &nbsp</label>
+                    <select id="" name="program">
+                             <option value="">Select Options</option>
+                             <option value="BTech">BTech</option>
+                             <option value="MTech">MTech</option>
+                 
+  
+                    </select>
 
                 <div class="row mb-3">
               
-              <label for="course" class="col-sm-2 col-form-label">Semester</label>
+              <label for="course" class="col-sm-2 col-form-label"></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"  name="sem" required>
+              
               </div>
                 </div>
+
+                
                 <div class="row mb-3">
               
               <label for="course" class="col-sm-2 col-form-label">Credit</label>

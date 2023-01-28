@@ -38,7 +38,7 @@ if(isset($_POST['addDoc']))
         //echo "90";
     }
     else{
-        echo "3";
+        //echo "3";
         header('location:index.php?msg="Invalid Email Password"'); 
     }
 

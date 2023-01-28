@@ -1,4 +1,4 @@
-<?php include('header.php');?>
+
 <main id="main" class="main">
 <div class ="row">
     <div class ="col-lg-12">
@@ -18,9 +18,9 @@
             <th><i class="icon_profile"></i>Grade</th>
             <th><i class="icon_profile"></i>Credit</th>
 </tr>
-
+<?php include('header.php');?>
 <?php
-session_start();
+
 require_once('config.php');
 
 $spi=0;
@@ -35,30 +35,18 @@ $toc=0;
         while($row=$result->fetch_object())
         {
             $sem=$row->Semester;
-            // echo $sem;
+             $sem=$sem-1;
         }}
         
-        if(isset($_POST['show']))
-        {
-           
-            $reg=$_POST['reg'];
-          
-            
-            $query= "SELECT * FROM Marks_Table where Reg_No= '$reg'  ";
         
-            if($result= $mysqli->query($query))
-            {
-                //echo "1";
-                while($row=$result->fetch_object())
-                {
-                    $_SESSION['reg'] = $row->Reg_No;
-                    $d=$row->Reg_No;
-        
-        $query= "SELECT * FROM Marks_Table  where Semester='$sem' and Reg_No='$d' " ;
 
-                }
-            }
-        }
+       $d= $_SESSION['userId'] ;
+       // $d=$row->Reg_No;
+       // echo $d;
+       
+
+$query= "SELECT * FROM Marks_Table  where Semester='$sem' and Reg_No='$d' " ;
+    
 
     if($result= $mysqli->query($query))
     {

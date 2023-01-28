@@ -1,9 +1,9 @@
 <?php 
 session_start();
-// if(!isset($_SESSION['userId']))
-// {
-//     header('location:index.php?msg= You have to login first');
-// }
+if(!isset($_SESSION['userId']))
+{
+    header('location:index.php?msg= You have to login first');
+}
 ?> 
 
 <!DOCTYPE html>
@@ -119,6 +119,20 @@ session_start();
         <a class="nav-link collapsed" href="viewCourses.php">
           <i class="bi bi-circle"></i>
           <span>My Courses</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="viewmyMarks.php">
+          <i class="bi bi-circle"></i>
+          <span>Marks Summary</span>
+        </a>
+      </li>
+      
+     
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="supply1.php">
+          <i class="bi bi-circle"></i>
+          <span>Supply Marks</span>
         </a>
       </li>
       

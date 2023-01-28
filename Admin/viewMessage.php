@@ -41,6 +41,10 @@ require_once('config.php');
             <tr>
 
     <td><?php echo $row->Info  ?></td>
+    
+
+   
+    <td>  <input type="button" class="btn btn-primary" name='del' onclick="location.href='deletemessage.php?id=<?php echo $row->U_ID ?>';" value="Delete Message" />    </td>
     <td>
         
 </div>

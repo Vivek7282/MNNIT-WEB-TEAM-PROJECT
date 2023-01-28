@@ -1,9 +1,9 @@
 <?php 
 session_start();
-// if(!isset($_SESSION['userId']))
-// {
-//     header('location:index.php?msg= You have to login first');
-// }
+if(!isset($_SESSION['userId']))
+{
+    header('location:index.php?msg= You have to login first');
+}
 ?> 
 
 <!DOCTYPE html>
@@ -112,12 +112,12 @@ session_start();
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="getRes1.php">
+            <a href="trans.php">
               <i class="bi bi-circle"></i><span>Transcript</span>
             </a>
           </li>
           <li>
-            <a href="getRes.php">
+            <a href="cpiSpi.php">
               <i class="bi bi-circle"></i><span>CPI/SPI</span>
             </a>
           </li>

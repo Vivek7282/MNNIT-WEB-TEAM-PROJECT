@@ -177,12 +177,11 @@ if(isset($_POST['change']))
 {
    
     $current=$_POST['csem'];
-    $prev=$_POST['psem'];
    
 
 
     
-    $query = "UPDATE Current_Sem SET Semester='$current' WHERE Semester='$prev'";
+    $query = "UPDATE Current_Sem SET Semester='$current'";
     
         if($mysqli->query($query) === true)
     {

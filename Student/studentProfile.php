@@ -1,4 +1,8 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+
 
 <body>
 
@@ -8,7 +12,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">DEAN WEB Admins</span>
+        <span class="d-none d-lg-block">MNNIT Student</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -44,14 +48,25 @@
 
     <div class="pagetitle">
       <h1>Profile</h1>
-      
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="studentDashboaed.php">Home</a></li>
+          
+        </ol>
+      </nav>
     </div><!-- End Page Title -->
 
 
 
 
     <?php include('header.php')?>
-   
+   <?php session_destroy();?>
+   <?php 
+session_start();
+require_once('config.php');
+$id=$_SESSION['userId'];
+
+?> 
 
     
     
@@ -67,7 +82,7 @@
 
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
               <h2><?php  if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}  ?></h2>
-              <h3>Admin</h3>
+              <h3>Student</h3>
               <!-- <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -91,9 +106,9 @@
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
                 </li>
 
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
-                </li> -->
+                </li>
 
                 <!-- <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
@@ -108,16 +123,24 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">I am admin of this Website.</p>
+                  <p class="small fst-italic"></p>
 
                   <h5 class="card-title">Profile Details</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Reg. Number</div>
+                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['userId'])){echo $_SESSION['userId'];}  ?></div>
+                  </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
                     <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}  ?></div>
                   </div>
 
-                  
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Parent Name</div>
+                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['pName'])){echo $_SESSION['pName'];}  ?></div>
+                  </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
@@ -126,14 +149,25 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Contact</div>
-                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['contact'])){echo $_SESSION['contact'];}  ?></div>
+                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['con'])){echo $_SESSION['con'];}  ?></div>
                   </div>
 
-                  
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Date of Birth</div>
+                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['doa'])){echo $_SESSION['doa'];}  ?></div>
+                  </div>
 
 
 
-                  
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Gender</div>
+                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['gender'])){echo $_SESSION['gender'];}  ?></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Department</div>
+                    <div class="col-lg-9 col-md-8"><?php  if(isset($_SESSION['dName'])){echo $_SESSION['dName'];}  ?></div>
+                  </div>               
 
                   
 
@@ -175,17 +209,22 @@
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Contact</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="con" type="text" class="form-control" id="Country" value="<?php  if(isset($_SESSION['contact'])){echo $_SESSION['contact'];}  ?>">
+                        <input name="con" type="text" class="form-control" id="Country" value="<?php  if(isset($_SESSION['con'])){echo $_SESSION['con'];}  ?>">
                       </div>
                     </div>
 
-                    
+                    <!-- <div class="row mb-3">
+                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Date of Appointment</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="doa" type="text" class="form-control" id="Address" value="<?php  if(isset($_SESSION['doa'])){echo $_SESSION['doa'];}  ?>">
+                      </div>
+                    </div>
 
-                   
+                    -->
                    
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary" name="updDoc">Save Changes</button>
+                      <button type="submit" class="btn btn-primary" name="updPai">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
@@ -228,11 +267,6 @@
 
 </body>
 
+</html>
 
-
-
-
-
-<?php include('footer.php');?>
-
-
+<?php include('footer.php')?>

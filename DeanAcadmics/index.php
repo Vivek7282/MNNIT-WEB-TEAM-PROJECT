@@ -705,6 +705,7 @@
                     </div>
 
                     <div class="col-lg-8 mt-5 mt-lg-0">
+                    <h2>Message for Admins</h2>
 
                     <form method="POST" action="function.php" enctype="multipart/form-data">
                             <div class="row">

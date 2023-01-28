@@ -31,13 +31,7 @@
 
 
 
-         <div class="row mb-3">
-              
-              <label for="course" class="col-sm-2 col-form-label">Course ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control"  name="cid1" required>
-              </div>
-                </div>
+         
 
          <div class="row mb-3">
               
@@ -47,21 +41,60 @@
               </div>
                 </div>
 
-                <div class="row mb-3">
-              
-              <label for="course" class="col-sm-2 col-form-label">Semester</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control"  name="sem" required>
-              </div>
-                </div>
+                
 
-                <div class="row mb-3">
+
+                <label for="type"> Course ID &emsp;&emsp;&emsp; &emsp;  &nbsp  &nbsp</label>
+                <select id="" name="cid1">
+                <option value="">Select Options</option>
+               
+
+                
+                <?php
+
+require_once('config.php');
+
+// Get the session ID
+$sessionId = $_SESSION['userId'];
+
+// Define the query
+$sub="Practical";
+$query = "SELECT * FROM Marks_Distribution WHERE Professor_Id = '$sessionId' and category='$sub'";
+
+// Execute the query
+$result = $mysqli->query($query);
+
+
+// Check if the query was successful
+if($result){
+  
+
+  
+  
+           
+  while ($row = mysqli_fetch_object($result)) {
+  ?>
+    <option value="<?php echo $row->Course; ?>" > <?php echo $row->Course ?></option>
+    <?php
+  }
+  
+  
+} 
+
+?>
+</select>
+
+
+
+                
+<div class="row mb-3">
               
-              <label for="course" class="col-sm-2 col-form-label">Credit</label>
+              <label for="course" class="col-sm-2 col-form-label"></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"  name="credit" required>
+                
               </div>
                 </div>
+                
 
 
          <div class="row mb-3">

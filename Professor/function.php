@@ -19,10 +19,9 @@ if(isset($_POST['addDoc']))
     {
         while($row=$result->fetch_object())
         {
-
-           
-            $_SESSION['userId'] = $row->Professors_ID;
             
+            
+            $_SESSION['userId'] = $row->Professors_ID;
             $_SESSION['userName'] = $row->NAME;
             $_SESSION['usePic'] = $row->profile_Image; 
             $_SESSION['course'] = $row->Course;  
@@ -48,7 +47,7 @@ if(isset($_POST['addDoc']))
 if(isset($_POST['viewCourse']))
 {
 
-    $user=$_POST['user1'];
+    $user=$_SESSION['userId'];
    
     
     $query= "SELECT * FROM Marks_Distribution where Professor_Id= '$user'  ";
@@ -126,22 +125,35 @@ else{
 
 }
 
-
 // add marks Theory
 if(isset($_POST['addMarks1']))
 {
     
- //$prop_id=$_SESSION['userId'];
- 
+    $prop_id=$_SESSION['userId'];
+ //$_SESSION['userId'] = $row->Professors_ID;
 
-
-    $prop_id=$_POST['id'];
+    //$prop_id= $_SESSION['userId'];
+    
+    //$prop_id=$_POST['id'];
     $cname=$_POST['cname'];
     $ta11=$_POST['ta1'];
     $credit=$_POST['credit'];
     $mid=$_POST['mid'];
     $program=$_POST['program'];
-    $sem=$_POST['sem'];
+
+    $query1= "SELECT * FROM Current_Sem " ;
+    $sem=0;
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $sem=$row->Semester;
+            // echo $sem;
+        }}
+        
+
+
+   // $sem=$_POST['sem'];
     $end=$_POST['end'];
     $cat="Theory";
     $IN=0;
@@ -158,24 +170,34 @@ if(isset($_POST['addMarks1']))
     
     else{ 
 
-        header('location:marksdistribution.php?msg= Marks Not added  ');
+        header('location:marksdistribution.php?msg= Marks Not added 11  ');
     }
 
 }
-
-
 
 // add marks Practicals
 if(isset($_POST['addMarks2']))
 {
  
-    $prop_id1=$_POST['id2'];
+    //$prop_id1=$_POST['id2'];
+    $prop_id1=$_SESSION['userId'];
     $cname2=$_POST['cname1'];
     $credit=$_POST['credit'];
     $ta12=$_POST['ta12'];
     $IN1=$_POST['inter'];
     $program=$_POST['program'];
-    $sem=$_POST['sem1'];
+    //$sem=$_POST['sem1'];
+
+
+    $query1= "SELECT * FROM Current_Sem " ;
+    $sem=0;
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $sem=$row->Semester;
+            // echo $sem;
+        }}
     $practical=$_POST['practical'];
     $mid1=0;
     $end1=0;
@@ -263,9 +285,29 @@ if(isset($_POST['addMarks3']))
 
     $reg=$_POST['reg'];
     $course=$_POST['cid'];
-    $sem=$_POST['sem1'];
+    //$sem=$_POST['sem1'];
+    $query1= "SELECT * FROM Current_Sem " ;
+    $sem=0;
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $sem=$row->Semester;
+            // echo $sem;
+        }}
     $ta2=$_POST['ta2'];
-    $credit=$_POST['credit'];
+    //$credit=$_POST['credit'];
+
+
+    $query1= "SELECT * FROM Marks_Distribution where Course='$course' " ;
+   $credit;
+   if($result= $mysqli->query($query1))
+   {
+       while($row=$result->fetch_object())
+       {
+           $credit=$row->Credit;
+           // echo $sem;
+       }}
     $mid=$_POST['mid2'];
     $end=$_POST['end2'];
     
@@ -304,8 +346,31 @@ if(isset($_POST['addMarks4']))
     $reg=$_POST['reg1'];
     $course=$_POST['cid1'];
     $ta2=$_POST['ta21'];
-    $credit=$_POST['credit'];
-    $sem=$_POST['sem']; 
+   // $credit=$_POST['credit'];
+
+
+   $query1= "SELECT * FROM Marks_Distribution where Course='$course' " ;
+   $credit;
+   if($result= $mysqli->query($query1))
+   {
+       while($row=$result->fetch_object())
+       {
+           $credit=$row->Credit;
+           // echo $sem;
+       }}
+
+
+   // $sem=$_POST['sem']; 
+
+   $query1= "SELECT * FROM Current_Sem " ;
+    $sem=0;
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $sem=$row->Semester;
+            // echo $sem;
+        }}
     $inter=$_POST['inter'];
     $pract=$_POST['Practical'];
     

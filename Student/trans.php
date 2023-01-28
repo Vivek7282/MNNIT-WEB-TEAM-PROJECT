@@ -30,32 +30,15 @@ require_once('config.php');
             // echo $sem;
         }}
         
-        if(isset($_POST['show']))
-        {
-           
-            $reg=$_POST['reg'];
-          
-            
-            $query= "SELECT * FROM Marks_Table where Reg_No= '$reg'  ";
         
-            if($result= $mysqli->query($query))
-            {
-                //echo "1";
-                while($row=$result->fetch_object())
-                {
-                    $_SESSION['reg'] = $row->Reg_No;
-                    $d=$row->Reg_No;
-        
-        
-
-                }
-            }
-        }
         ?>
         <?php
          $cpi=0;
          $tolc=0;
-         for($i=1;$i< 3;$i++){
+         $d= $_SESSION['userId'] ;
+
+         for($i=1;$i<$sem;$i++){
+            $query= "SELECT * FROM Marks_Table  where Semester='$i' and Reg_No='$d' " ;
             ?>
             <tr>
             

@@ -1,10 +1,10 @@
 <?php 
-// session_start();
-// if(!isset($_SESSION['userId']))
-// {
-//     echo '1';
-//     header('location:index.php?msg= You have to login first');
-// }
+session_start();
+if(!isset($_SESSION['userId']))
+{
+   // echo '1';
+    header('location:index.php?msg= You have to login first');
+}
 ?> 
 
 <!DOCTYPE html>

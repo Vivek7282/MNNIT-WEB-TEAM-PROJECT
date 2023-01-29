@@ -125,16 +125,41 @@ if(!isset($_SESSION['userId']))
       </li><!-- End Dashboard Nav -->
 
       
+     
+
       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Registrations</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li class="nav-item">
         <a class="nav-link collapsed" href="viewRequest.php">
           <i class="bi bi-grid"></i>
-          <span>Registration Request </span>
+          <span>Students Registration Request </span>
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="viewRequest1.php">
+          <i class="bi bi-grid"></i>
+          <span>Professors Registration Request </span>
+        </a>
+      </li>
+
+          </li>
 
 
 
+       
+        </ul>
+      </li><!-- End Forms Nav -->
+
+       
+
+
+
+
+      
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="changeSem.php">
@@ -192,11 +217,13 @@ if(!isset($_SESSION['userId']))
 
           
           </li>
+          
 
           
         </ul>
       </li><!-- End Forms Nav -->
 
+      
 
 
 
@@ -257,25 +284,7 @@ if(!isset($_SESSION['userId']))
       <!-- End Forms Nav -->
 
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="addUser.php">
-              <i class="bi bi-circle"></i><span>Add Users</span>
-            </a>
-          </li>
-          <li>
-            <a href="viewUser.php">
-              <i class="bi bi-circle"></i><span>View Users</span>
-            </a>
-          </li>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
+      
 
 
 

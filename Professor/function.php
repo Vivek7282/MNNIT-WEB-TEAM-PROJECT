@@ -396,31 +396,71 @@ if(isset($_POST['addMarks4']))
 
 
 
-//update doctor
-if(isset($_POST['updDoc']))
-{
+// add professor
 
-        $id=$_SESSION['userId'];
-        $name=$_SESSION['name'];
-       
-        $dob=$_SESSION['dob'];
-        $email=$_SESSION['email'];
-        $con=$_SESSION['con'];
+
+if(isset($_POST['addprop']))
+{
+    $name=$_POST['name'];
+    $pass=$_POST['pass'];
+    $email=$_POST['email'];
+    $contact=$_POST['contact'];
+    $dob=$_POST['dob'];
+    $depart=$_POST['depart'];
     
-    
-    $query= "UPDATE Professors SET NAME='$name', CONTACT='$con',EMAIL='$email',DOB='$dob' where DOCTOR_ID=$id ";
+    $prof="12hsj3hs83hshs";
+
+
+
+$query="INSERT INTO ProfessorsRequest(NAME1,EMAIL,CONTACT,passwor,DOB,Department,profile_Image)
+ VALUES ('$name','$email','$contact','$pass','$dob','$depart','$prof')";
 
     if($mysqli->query($query)===true)
     {
-         
-            header('location:professorProfile.php?msg=status updated successfully');
         
+            //   move_uploaded_files($_FILES["photo"]['tmp_name'], $path);
+            header('location:index.php?msg= Registration Request sent Successfully '); 
     }
+    
+
     else{
-        header('location:professorProfile.php?msg=status not updated ');
+        header('location:index.php?msg = ERROR1 ');
+    }
+    // move_uploaded_file($_FILES["photo"]["tmp_name," ]);
 
 }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

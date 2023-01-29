@@ -22,7 +22,7 @@
 session_start();
 require_once('config.php');
 
-
+$d= $_SESSION['userId'] ;
     $query1= "SELECT * FROM Current_Sem " ;
     $sem=0;
     if($result= $mysqli->query($query1))
@@ -30,22 +30,55 @@ require_once('config.php');
         while($row=$result->fetch_object())
         {
             $sem=$row->Semester;
-            // echo $sem;
+          //  echo $d;
         }}
-        $query= "SELECT * FROM Marks_Distribution  where Semester='$sem'  " ; 
+        $query1= "SELECT * FROM student where Student_id='$d' " ;
+
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $depart=$row->DEPART;
+            //echo $depart;
+        }}
+
+
+
+        $query= "SELECT * FROM Marks_Distribution  where Semester='$sem' " ; 
        
     if($result= $mysqli->query($query))
     {
         while($row=$result->fetch_object())
         {
-            
-         
-            ?>
-            <tr>
+        $cor= $row->Course  ;
+        $prop=$row->Professor_Id;
+        // echo $row->Course  ;
+        // echo $row->Professor_Id; 
 
-    <td><?php echo $row->Course   ?> </td>
-    <td><?php echo $row->category   ?> </td>
+
+       
+
+    $query1= "SELECT * FROM Professors where Professors_ID='$prop' " ;
+
+if($result1= $mysqli->query($query1))
+{
+    while($row1=$result1->fetch_object())
+    {
+        $deprt=$row1->Department;
+        //echo $row1->Department;
+        if($deprt== $depart)
+        ?>
+        <tr>
+         <td><?php echo $cor  ?> </td>
+    <td><?php echo $row->category  ?> </td>
+    </tr>
+    <?php
+    }}
+
+        }}
+?>
    
+  
     
     <td>
 
@@ -58,13 +91,13 @@ require_once('config.php');
 </td>
 </tr>
 <?php
-        }
+        
         
 
 
 
         
-    }
+    
     
 
 

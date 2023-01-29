@@ -46,10 +46,18 @@ require_once('config.php');
 
 // Get the session ID
 $sessionId = $_SESSION['userId'];
-
+$query1= "SELECT * FROM Current_Sem " ;
+$sem=0;
+if($result= $mysqli->query($query1))
+{
+    while($row=$result->fetch_object())
+    {
+        $sem=$row->Semester;
+        // $sem=$sem;
+    }}
 // Define the query
 $sub="Theory";
-$query = "SELECT * FROM Marks_Distribution WHERE Professor_Id = '$sessionId' and category='$sub'";
+$query = "SELECT * FROM Marks_Distribution WHERE Professor_Id = '$sessionId' and category='$sub'and Semester='$sem'";
 
 // Execute the query
 $result = $mysqli->query($query);

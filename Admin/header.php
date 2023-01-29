@@ -126,6 +126,17 @@ if(!isset($_SESSION['userId']))
 
       
       <li class="nav-item">
+        <a class="nav-link collapsed" href="viewRequest.php">
+          <i class="bi bi-grid"></i>
+          <span>Registration Request </span>
+        </a>
+      </li>
+
+
+
+
+
+      <li class="nav-item">
         <a class="nav-link collapsed" href="changeSem.php">
           <i class="bi bi-grid"></i>
           <span>Change Semester </span>

@@ -59,7 +59,16 @@ $sessionId = $_SESSION['userId'];
 
 // Define the query
 $sub="Practical";
-$query = "SELECT * FROM Marks_Distribution WHERE Professor_Id = '$sessionId' and category='$sub'";
+$query1= "SELECT * FROM Current_Sem " ;
+$sem=0;
+if($result= $mysqli->query($query1))
+{
+    while($row=$result->fetch_object())
+    {
+        $sem=$row->Semester;
+         $sem=$sem;
+    }}
+$query = "SELECT * FROM Marks_Distribution WHERE Professor_Id = '$sessionId' and category='$sub' and Semester='$sem'";
 
 // Execute the query
 $result = $mysqli->query($query);

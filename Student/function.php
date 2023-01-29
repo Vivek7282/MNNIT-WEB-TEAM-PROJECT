@@ -62,6 +62,60 @@ if(isset($_POST['addstu']))
 
 
 
+// Add Doctors
+
+
+if(isset($_POST['addstu']))
+{
+    $name=$_POST['name'];
+    $pname=$_POST['pname'];
+    $email=$_POST['email'];
+    $contact=$_POST['contact'];
+    $dob=$_POST['dob'];
+    $program=$_POST['program'];
+    $depart=$_POST['depart'];
+    $gender=$_POST['gender'];
+    $prof="12hsj3hs83hshs";
+
+
+
+$query="INSERT INTO studentRequest(Program,P_name,Parent_Name,DEPART,EMAIL,CONTACT,Date_of_birth,Gender,Profile_Image) VALUES ('$program','$name','$pname','$depart','$email','$contact','$dob','$gender','$prof')";
+
+    if($mysqli->query($query)===true)
+    {
+        
+            //   move_uploaded_files($_FILES["photo"]['tmp_name'], $path);
+            header('location:index.php?msg= Registration Request sent Successfully '); 
+    }
+    
+
+    else{
+        header('location:index.php?msg = ERROR1 ');
+    }
+    // move_uploaded_file($_FILES["photo"]["tmp_name," ]);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //update Paitents
 if(isset($_POST['updPai']))

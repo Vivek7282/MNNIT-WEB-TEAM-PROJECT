@@ -286,7 +286,7 @@ if(isset($_POST['addMarks3']))
     $reg=$_POST['reg'];
     $course=$_POST['cid'];
     //$sem=$_POST['sem1'];
-    $query1= "SELECT * FROM Current_Sem " ;
+    $query1= "SELECT * FROM Permissions where Ind=0 " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
@@ -362,7 +362,7 @@ if(isset($_POST['addMarks4']))
 
    // $sem=$_POST['sem']; 
 
-   $query1= "SELECT * FROM Current_Sem " ;
+   $query1= "SELECT * FROM Permissions where Ind=0 " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
@@ -409,11 +409,11 @@ if(isset($_POST['addprop']))
     $depart=$_POST['depart'];
     
     $prof="12hsj3hs83hshs";
+  $a=0;
 
 
-
-$query="INSERT INTO ProfessorsRequest(NAME1,EMAIL,CONTACT,passwor,DOB,Department,profile_Image)
- VALUES ('$name','$email','$contact','$pass','$dob','$depart','$prof')";
+$query="INSERT INTO Professors(Approved,NAME,EMAIL,CONTACT,passwor,DOB,Department,profile_Image)
+ VALUES ('$a','$name','$email','$contact','$pass','$dob','$depart','$prof')";
 
     if($mysqli->query($query)===true)
     {

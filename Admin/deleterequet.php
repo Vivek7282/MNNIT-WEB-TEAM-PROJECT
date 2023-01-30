@@ -6,7 +6,7 @@ $stu_id = $_GET['id'];
 //echo  $messageId ;
 
 // Define the delete query
-$query = "DELETE FROM studentRequest WHERE Student_id = '$stu_id'";
+$query = "DELETE FROM student WHERE Student_id = '$stu_id'";
 
 // Execute the query
 $result = $mysqli->query($query);

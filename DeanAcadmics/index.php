@@ -79,12 +79,14 @@
 
         </div>
     </header>
+    
     <!-- End Header -->
 <!--  -->
     <!-- ======= Hero Section ======= -->
     <section style="background-image: url('main-building.jpg'); background-size: 100% 80%;" id="hero" class="d-flex align-items-center">
+    
         <div  class="container">
-
+        
 
         <div class="row">
                     <div class="col-lg-8 d-flex align-items-stretch"  >
@@ -98,11 +100,12 @@
 
         </div>
         </div>
+        
     </section>
     <!-- End Hero -->
 
     <main id="main">
-
+    
         <!-- ======= Why Us Section ======= -->
         <section id="why-us" class="why-us">
             <div class="container">
@@ -125,6 +128,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <!-- <div class="col-lg-8 d-flex align-items-stretch">
                         <div class="icon-boxes d-flex flex-column justify-content-center">
                             <div class="row">

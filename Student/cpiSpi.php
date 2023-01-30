@@ -28,7 +28,7 @@ $total_sub=0;
 $PASS=1;
 $toc=0;
 
-    $query1= "SELECT * FROM Current_Sem " ;
+    $query1= "SELECT * FROM Permissions where Ind=0 " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {

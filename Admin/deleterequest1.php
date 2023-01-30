@@ -6,7 +6,7 @@ $prop_id = $_GET['id'];
 
 
 // Define the delete query
-$query = "DELETE FROM ProfessorsRequest WHERE Professors_ID = '$prop_id'";
+$query = "DELETE FROM Professors WHERE Professors_ID = '$prop_id'";
 
 // Execute the query
 $result = $mysqli->query($query);

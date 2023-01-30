@@ -28,7 +28,7 @@ require_once('config.php');
 
 
 
-    $query1= "SELECT * FROM Current_Sem " ;
+    $query1= "SELECT * FROM Permissions where Ind=0 " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
@@ -43,8 +43,9 @@ require_once('config.php');
        $d= $_SESSION['userId'] ;
        // $d=$row->Reg_No;
        // echo $d;
+       $sem1=$sem-1;
 
-$query= "SELECT * FROM Marks_Distribution  where Semester='$sem' and Professor_Id='$d'  " ;
+$query= "SELECT * FROM Marks_Distribution  where (Semester='$sem' OR Semester='$sem1') and Professor_Id='$d'  " ;
     
 
     if($result= $mysqli->query($query))

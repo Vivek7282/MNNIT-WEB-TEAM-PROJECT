@@ -20,18 +20,17 @@ require_once('config.php');
          <form    class="form-horizontal" method="post" action="function.php">
 
 <?php
-         $query = "SELECT Semester FROM Current_Sem LIMIT 1";
-         $result = $mysqli->query($query);
-         if ($result->num_rows > 0) {
-             $row = $result->fetch_assoc();
-             $currentSemester = $row['Semester'];
-            
-         } else {
-             echo "Error: Could not find current semester";
-         }
-
-
-
+        $query = "SELECT * FROM Permissions";
+        $result = $mysqli->query($query);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $currentSemester = $row["Semester"];
+        } else {
+            echo "Error: Could not find current semester";
+            exit;
+        }
+        
+        
 ?>
 <?php  echo  "Previous  Semester    :     " . $currentSemester;  ?>
          

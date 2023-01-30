@@ -44,7 +44,7 @@ require_once('config.php');
 //echo $count1;
 
 
-    $query1= "SELECT * FROM studentRequest " ;
+    $query1= "SELECT * FROM student where Approved=0 " ;
     if($result= $mysqli->query($query1))
     {
         while($row=$result->fetch_object())

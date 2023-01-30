@@ -59,7 +59,7 @@ $sessionId = $_SESSION['userId'];
 
 // Define the query
 $sub="Practical";
-$query1= "SELECT * FROM Current_Sem " ;
+$query1= "SELECT * FROM Permissions where Ind=0" ;
 $sem=0;
 if($result= $mysqli->query($query1))
 {

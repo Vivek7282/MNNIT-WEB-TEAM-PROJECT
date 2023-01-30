@@ -44,7 +44,7 @@ require_once('config.php');
 //echo $count1;
 
 
-    $query1= "SELECT * FROM ProfessorsRequest " ;
+    $query1= "SELECT * FROM Professors where Approved=0 " ;
     if($result= $mysqli->query($query1))
     {
         while($row=$result->fetch_object())
@@ -52,7 +52,7 @@ require_once('config.php');
             ?>
              <tr>
   
-             <td><?php echo $row->NAME1; ?> </td>
+             <td><?php echo $row->NAME; ?> </td>
              <td><?php echo $row->Department; ?> </td>
              <td><?php echo $row->EMAIL; ?> </td>
              <td><?php echo $row->DOB;?> </td>

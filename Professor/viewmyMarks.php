@@ -25,7 +25,7 @@
 
 require_once('config.php');
 
-$query1= "SELECT * FROM Current_Sem " ;
+$query1= "SELECT * FROM Permissions where Ind=0 " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
@@ -42,15 +42,7 @@ $query1= "SELECT * FROM Current_Sem " ;
     {
         while($row1=$result->fetch_object())
         {
-            ?>
-            <tr>
-            <th><i class="icon_profile"></i></th>
-            <th><i class="icon_profile"></i>Course</th>
-            <th><?php echo $row1->Course ?></th>
-           <?php $program=$row1->Program;?>
             
-            </tr>
-            <?php
         
       $course=$row1->Course;
 
@@ -59,8 +51,21 @@ $query= "SELECT * FROM Marks_Table  where   Semester='$sem' and Course='$course'
 
     if($result1= $mysqli->query($query))
     {
+        $a=0;
         while($row=$result1->fetch_object())
         {
+            $a++;
+            if($a==1){
+                ?>
+            <tr>
+            <th><i class="icon_profile"></i></th>
+            <th><i class="icon_profile"></i>Course</th>
+            <th><?php echo $row1->Course ?></th>
+           <?php $program=$row1->Program;?>
+            
+            </tr>
+            <?php
+            }
             
         
             ?>

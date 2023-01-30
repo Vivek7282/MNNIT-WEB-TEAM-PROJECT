@@ -181,7 +181,7 @@ if(isset($_POST['change']))
 
 
     
-    $query = "UPDATE Current_Sem SET Semester='$current'";
+    $query = "UPDATE Permissions  SET Semester='$current' where Ind=0";
     
         if($mysqli->query($query) === true)
     {

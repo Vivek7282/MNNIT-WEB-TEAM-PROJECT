@@ -73,6 +73,7 @@ require_once('config.php');
            <tr>
            <th><?php echo "Reg. Number"?></th>
            <th><?php echo "Name"?></th>
+           <th><?php echo "Email"?></th>
            
 </tr>
 <?php
@@ -84,7 +85,8 @@ require_once('config.php');
                    ?>
                    <tr>
                    <th><?php echo $stu  ?> </th>
-                   <th><?php echo $row->P_name  ?> </th> 
+                   <th><?php echo $row->P_name  ?> </th>
+                   <th><?php echo $row->EMAIL  ?> </th>  
                </tr>
                    <?php
                    

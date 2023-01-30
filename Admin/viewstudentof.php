@@ -31,17 +31,20 @@ require_once('config.php');
     ?>
     <table class="table table-striped table-advance table-hove">
     <tbody>
+        <tr> <th><?php echo "Branch: $branch"?></th></tr>
         <tr>
            
        
             <th><?php echo "Student_id"?></th>
             <th><?php echo "Name"?></th>
-            <th><?php echo "Branch: $branch"?></th>
+            <th><?php echo "Program"?></th>
+            <th><?php echo "Email"?></th>
+           
            
 </tr>
 
 <?php 
-    $query1= "SELECT * FROM student where DEPART='$branch' " ;
+    $query1= "SELECT * FROM student where DEPART='$branch' and Approved=1 " ;
  
    if($result= $mysqli->query($query1))
    {
@@ -49,8 +52,10 @@ require_once('config.php');
        {
         ?>
                    <tr>
-                   <th><?php echo $row->Student_id  ?> </th>
-                   <th><?php echo $row->P_name  ?> </th> 
+                   <td><?php echo $row->Student_id  ?> </td>
+                   <td><?php echo $row->P_name  ?> </td>
+                   <td><?php echo $row->Program  ?> </td> 
+                   <td><?php echo $row->EMAIL  ?> </td>   
                </tr>
                    <?php
           

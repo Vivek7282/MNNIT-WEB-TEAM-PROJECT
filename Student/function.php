@@ -11,9 +11,9 @@ if(isset($_POST['addDoc']))
 {
    
     $email=$_POST['email'];
-  
+   $a=1;
     
-    $query= "SELECT * FROM student where EMAIL= '$email'  ";
+    $query= "SELECT * FROM student where EMAIL= '$email' and Approved=1  ";
 
     if($result= $mysqli->query($query))
     {
@@ -76,10 +76,11 @@ if(isset($_POST['addstu']))
     $depart=$_POST['depart'];
     $gender=$_POST['gender'];
     $prof="12hsj3hs83hshs";
+    $b=0;
 
 
-
-$query="INSERT INTO studentRequest(Program,P_name,Parent_Name,DEPART,EMAIL,CONTACT,Date_of_birth,Gender,Profile_Image) VALUES ('$program','$name','$pname','$depart','$email','$contact','$dob','$gender','$prof')";
+$query="INSERT INTO student(Approved,Program,P_name,Parent_Name,DEPART,EMAIL,CONTACT,Date_of_birth,Gender,Profile_Image)
+ VALUES ('$b','$program','$name','$pname','$depart','$email','$contact','$dob','$gender','$prof')";
 
     if($mysqli->query($query)===true)
     {

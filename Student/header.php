@@ -92,6 +92,7 @@ if(!isset($_SESSION['userId']))
     
 
   </main><!-- End #main -->
+  
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
@@ -152,3 +153,4 @@ if(!isset($_SESSION['userId']))
     </ul>
 
   </aside><!-- End Sidebar-->
+  

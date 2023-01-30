@@ -40,6 +40,27 @@ h6 {
 }
 
 
+/* notification */
+
+#notification {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+    padding: 10px;
+    animation: moveRight 5s linear infinite;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/

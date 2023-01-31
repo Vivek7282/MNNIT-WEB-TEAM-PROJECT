@@ -245,6 +245,36 @@ if(isset($_POST['addCourses1']))
 }
 
 
+
+
+
+
+
+if(isset($_POST['addCourses2']))
+{
+   
+    
+    $per=$_POST['ptype'];
+   
+
+
+    $o=0;
+    $query = "UPDATE Permissions SET Result='$per' WHERE Ind=0";
+    
+        if($mysqli->query($query) === true)
+    {
+       
+            header('location:adminDashboard.php?msg = Permission Changed Successfully');
+        
+    }
+    else{ 
+
+        header('location:addCourse.php?msg= Permission Not changed ');
+    }
+
+}
+
+
 // change Couse permisssion
 
 
@@ -272,6 +302,47 @@ if(isset($_POST['addgrade1']))
     }
 
 }
+
+
+
+
+
+if(isset($_POST['message3']))
+{
+  
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $subject=$_POST['subject1'];
+    $message=$_POST['message1'];
+    $a=0;
+   
+
+
+    $query="INSERT INTO Message(A_Name,EMAIL,A_subject,Info,admin) VALUES ('$name','$email','$subject','$message','$a')";
+    
+        if($mysqli->query($query)===true)
+        {
+            
+                //   move_uploaded_files($_FILES["photo"]['tmp_name'], $path);
+                header('location:adminDashboard.php?msg=Notice sent successfully '); 
+        }
+    
+    
+        else{
+            header('location:addnotification.php?msg = ERROR1 ');
+        }
+        // move_uploaded_file($_FILES["photo"]["tmp_name," ]);
+    
+    
+    
+    }
+    
+
+
+
+
+
+
 
 
 

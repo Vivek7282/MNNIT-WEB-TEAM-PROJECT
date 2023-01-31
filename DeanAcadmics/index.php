@@ -33,6 +33,9 @@
 
 <body>
 
+
+
+
     <!-- ======= Top Bar ======= -->
     <!-- <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
@@ -83,11 +86,72 @@
     <!-- End Header -->
 <!--  -->
     <!-- ======= Hero Section ======= -->
+
+
+<!-- <div class="moving-text">Text moving from left to right</div> -->
+
+
+
+
+<div>
+<?php require_once('config.php');?>
+<?php
+$query1= "SELECT * From Message where admin=0  " ;
+    $sem=0;
+    ?>
+    <div  class="moving-text">
+        
+    Notice:-<?php echo " &emsp;"?>
+    <?php
+        if($result = $mysqli->query($query1))
+        {
+            while($row = $result->fetch_object())
+            {
+                $info = $row->Info;
+                 echo $info;
+                 echo "  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                   ";
+            }
+        }
+    ?>
+
+
+
+<style>
+   
+
+.moving-text {
+    width: 130% ;
+  animation: moving-text 20s linear infinite;
+  background-color: white;
+  color:red;
+  padding: 10px; 
+  font-weight:bold;
+}
+
+@keyframes moving-text {
+from {
+transform: translateX(80%);
+}
+to {
+transform: translateX(-100%);
+}
+}
+</style>
+</div>
+</div>
+
+    
     <section style="background-image: url('main-building.jpg'); background-size: 100% 80%;" id="hero" class="d-flex align-items-center">
     
         <div  class="container">
         
+        
 
+
+
+
+        
         <div class="row">
                     <div class="col-lg-8 d-flex align-items-stretch"  >
                         <div class="content">

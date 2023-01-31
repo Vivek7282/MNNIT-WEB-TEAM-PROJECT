@@ -20,7 +20,7 @@ session_start();
 require_once('config.php');
 
 
-    $query1= "SELECT * FROM Permissions where Ind=0 " ;
+    $query1= "SELECT * FROM Permissions " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
@@ -38,6 +38,7 @@ require_once('config.php');
          $d= $_SESSION['userId'] ;
 
          for($i=1;$i<$sem;$i++){
+            
             $query= "SELECT * FROM Marks_Table  where Semester='$i' and Reg_No='$d' " ;
             ?>
             <tr>

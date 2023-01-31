@@ -28,13 +28,14 @@ $total_sub=0;
 $PASS=1;
 $toc=0;
 
-    $query1= "SELECT * FROM Permissions where Ind=0 " ;
+    $query1= "SELECT * FROM Permissions where Ind=0  " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
         while($row=$result->fetch_object())
         {
             $sem=$row->Semester;
+            $res=$row->Result;
              $sem=$sem-1;
         }}
         
@@ -48,7 +49,7 @@ $toc=0;
 $query= "SELECT * FROM Marks_Table  where Semester='$sem' and Reg_No='$d' " ;
     
 
-    if($result= $mysqli->query($query))
+    if($res!=0 && $result= $mysqli->query($query))
     {
         while($row=$result->fetch_object())
         {
@@ -109,31 +110,38 @@ $query= "SELECT * FROM Marks_Table  where Semester='$sem' and Reg_No='$d' " ;
         
 
 
-
+        ?>
+        <tr>
+                    <th><i class="icon_profile"></i></th>
+                    
+                    
+                    <th><i class="icon_profile"></i>Spi</th>
+                    <th><?php echo  $spi/$toc   ?> </th>
+                   
+        </tr>
+        <tr>
+                    <th><i class="icon_profile"></i></th>
+                    <th><i class="icon_profile"></i></th>
+                    <th><?php    ?> </th>
+                   
+        </tr>
+        <tr>
+            <?php
         
     }
     
-
-
-
-
+    else{
+        ?>
+        
+       <?php echo "Results have been not declared"?>
+       <?php
+    }
 
 ?>
-<tr>
-            <th><i class="icon_profile"></i></th>
-            
-            
-            <th><i class="icon_profile"></i>Spi</th>
-            <th><?php echo  $spi/$toc   ?> </th>
-           
-</tr>
-<tr>
-            <th><i class="icon_profile"></i></th>
-            <th><i class="icon_profile"></i></th>
-            <th><?php    ?> </th>
-           
-</tr>
-<tr>
+
+
+
+
     <!-- $status="FAIL"; -->
 <?php  
 if($PASS=1)

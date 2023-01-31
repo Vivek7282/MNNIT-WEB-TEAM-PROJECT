@@ -42,9 +42,17 @@ require_once('config.php');
 
     <td><?php echo $row->Info  ?></td>
     
-
-   
+<?php
+    if( $row->admin==1){?>
     <td>  <input type="button" class="btn btn-primary" name='del' onclick="location.href='deletemessage.php?id=<?php echo $row->U_ID ?>';" value="Delete Message" />    </td>
+<?php
+    }
+    else{
+        ?>
+        <td>  <input type="button" class="btn btn-primary" name='del' onclick="location.href='deletemessage.php?id=<?php echo $row->U_ID ?>';" value="Delete Notice" />    </td> 
+   <?php
+    }
+    ?>
     <td>
         
 </div>

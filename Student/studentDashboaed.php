@@ -1,20 +1,38 @@
 
 
+<div id="bar" onload="moveBar()" style="width: 100%; height: 10px; background-color: blue; position: absolute; left: 0; top: 50%;"></div>
 
+<script>
+  function moveBar() {
+    var pos = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (pos == 350) {
+        clearInterval(id);
+      } else {
+        pos++; 
+        document.getElementById("bar").style.left = pos + "px";
+      }
+    }
+  }
+</script>
 
 <body>
 
   
 
   <main id="main" class="main">
+    
     <?php include('header.php')?>
    
     
+
     
    
 <div class="pagetitle">
   <h1> Profile</h1>
 </div>
+
     
     <section class="section profile">
       <div class="row">

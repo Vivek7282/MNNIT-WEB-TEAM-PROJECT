@@ -167,19 +167,30 @@ if(!isset($_SESSION['userId']))
           <span>Change Semester </span>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="addGradeper.php">
           <i class="bi bi-grid"></i>
           <span>Add Grade</span>
         </a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="addCourse.php">
           <i class="bi bi-grid"></i>
-          <span>Add Course</span>
+          <span>All Permissions</span>
         </a>
       </li>
-
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="addResultp.php">
+          <i class="bi bi-grid"></i>
+          <span>Open Result</span>
+        </a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="addnotification.php">
+          <i class="bi bi-grid"></i>
+          <span>Notification</span>
+        </a>
+      </li>
 
       
       <li class="nav-item">
@@ -233,7 +244,7 @@ if(!isset($_SESSION['userId']))
       <li class="nav-item">
         <a class="nav-link collapsed" href="viewMessage.php">
           <i class="bi bi-grid"></i>
-          <span>Message for Admins</span>
+          <span>Message/Notice for Admins</span>
         </a>
       </li>
 

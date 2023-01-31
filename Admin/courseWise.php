@@ -38,8 +38,17 @@
 
 require_once('config.php');
 
-
-$query = "SELECT * FROM Marks_Distribution ";
+$query1= "SELECT * FROM Permissions where Ind=0  " ;
+    $sem=0;
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $sem=$row->Semester;
+          
+        }}
+        
+$query = "SELECT * FROM Marks_Distribution  where Semester='$sem' ";
 
 // Execute the query
 $result = $mysqli->query($query);

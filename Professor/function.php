@@ -141,7 +141,7 @@ if(isset($_POST['addMarks1']))
     $mid=$_POST['mid'];
     $program=$_POST['program'];
 
-    $query1= "SELECT * FROM Current_Sem " ;
+    $query1= "SELECT * FROM Permissions " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {
@@ -189,7 +189,7 @@ if(isset($_POST['addMarks2']))
     //$sem=$_POST['sem1'];
 
 
-    $query1= "SELECT * FROM Current_Sem " ;
+    $query1= "SELECT * FROM Permissions " ;
     $sem=0;
     if($result= $mysqli->query($query1))
     {

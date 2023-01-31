@@ -27,9 +27,18 @@ require_once('config.php');
    
     $course=$_POST['course'];
     
-
+    $query1= "SELECT * FROM Permissions where Ind=0  " ;
+    $sem=0;
+    if($result= $mysqli->query($query1))
+    {
+        while($row=$result->fetch_object())
+        {
+            $sem=$row->Semester;
+          
+        }}
+        
    
-    $query1= "SELECT * FROM Marks_Distribution where Course='$course' " ;
+    $query1= "SELECT * FROM Marks_Distribution where Course='$course' and Semester='$sem' " ;
  
    if($result= $mysqli->query($query1))
    {

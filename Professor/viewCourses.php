@@ -36,7 +36,7 @@ $query1= "SELECT * FROM Permissions where Ind=0 " ;
         
 
        $d= $_SESSION['userId'] ;
-      
+       
 
 $query= "SELECT * FROM Marks_Distribution  where  Professor_Id='$d' and Semester='$sem' " ;
     

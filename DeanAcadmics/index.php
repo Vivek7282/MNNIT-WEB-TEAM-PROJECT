@@ -142,7 +142,7 @@ transform: translateX(-100%);
 </div>
 
     
-    <section style="background-image: url('main-building.jpg'); background-size: 100% 80%;" id="hero" class="d-flex align-items-center">
+    <section style="background-image: url('main-building.jpeg'); background-size: 100% 80%;" id="hero" class="d-flex align-items-center">
     
         <div  class="container">
         

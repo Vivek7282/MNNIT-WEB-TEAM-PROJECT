@@ -127,12 +127,28 @@ if(!isset($_SESSION['userId']))
           <span>Marks Summary</span>
         </a>
       </li>
+
+
+
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="AddMarks1.php">
+          <i class="bi bi-circle"></i>
+          <span>Upload Marks1</span>
+        </a>
+      </li> -->
       
      
       <li class="nav-item">
         <a class="nav-link collapsed" href="supply1.php">
           <i class="bi bi-circle"></i>
           <span>Supply Marks</span>
+        </a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="password.php">
+          <i class="bi bi-circle"></i>
+          <span>Update Password</span>
         </a>
       </li>
       

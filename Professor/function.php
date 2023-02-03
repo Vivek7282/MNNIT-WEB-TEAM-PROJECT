@@ -40,7 +40,53 @@ if(isset($_POST['addDoc']))
 
 
 
+
+
+
+//cahnge Password
+if(isset($_POST['change']))
+{
+
+    $old=$_POST['old'];
+    $new=$_POST['new'];
+    $d= $_SESSION['userId'];
+    $query= "SELECT * FROM Professors where passwor='$old' and Professors_ID='$d' ";
+    if($result= $mysqli->query($query))
+    {
+        while($row=$result->fetch_object())
+        {
+            
+            
+            $query1="UPDATE Professors SET passwor = '$new' WHERE Professors_ID='$d'";
+            if($result1= $mysqli->query($query1)){
+            header('location:professorDashboard.php?msg="Changed Password Successfully"');}
+            else{
+                header('location:professorDashboard.php?msg=" Password not updated"');  
+            }
+        }
+    }
+    else{
+        header('location:professorDashboard.php?msg="Invalid old Password"'); 
+    }
+    header('location:professorDashboard.php?msg="Invalid old Password"'); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // view Courses
+
 
 
 
@@ -391,6 +437,9 @@ if(isset($_POST['addMarks4']))
         header('location:AddMarksPractical.php?msg= Marks Not added  ');
     }
 }
+
+
+
 
 
 

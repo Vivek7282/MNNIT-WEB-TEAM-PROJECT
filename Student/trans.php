@@ -33,7 +33,8 @@ require_once('config.php');
         
         ?>
         <?php
-         $cpi=0;
+         $cpi=0.0;
+         $cpi1=0.00;
          $tolc=0;
          $d= $_SESSION['userId'] ;
 
@@ -123,11 +124,14 @@ $PASS=1;
     ?>
 
          <td><i class="icon_profile"></i></td>
-          <td><i class="icon_profile"></i>Spi</td>
-         
-            <td><?php echo   number_format((float)$spi/$toc, 2, '.', '')   ?> </td>
+          <td><i class="icon_profile"></i>SPI</td>
+          <?php   $spi1=number_format((float)$spi/$toc, 2, '.', '')   ?> 
+            <td><?php echo  $spi1   ?> </td>
             <td><i class="icon_profile"></i></td>
             <?php $cpi= $cpi+$spi?> 
+            <?php $cpi1+=$spi1 ?>
+            <?php $cpi2=number_format((float)$cpi/($tolc),2,'.','') ?>
+          
     <?php
 
     ?>
@@ -150,6 +154,21 @@ $status= "You have supplementary examinations.";
 </tr>
 </tr>
 <?php
+
+
+$query111="INSERT INTO CPISPI(student_reg,semester,spi,cpi,totalCredit)
+ VALUES ('$d','$i','$spi1','$cpi2','$toc')";
+if($result111= $mysqli->query($query111))
+{ 
+     echo ".";
+   
+}
+else{
+     echo " . ";
+}
+
+
+
 }
 
 
@@ -173,7 +192,7 @@ $status= "You have supplementary examinations.";
             <th><i class="icon_profile"></i></th>
             <th><i class="icon_profile"></i>CPI</th>
             
-            <th><?php echo $cpi/($tolc) ?> </th>
+            <th><?php echo number_format((float)$cpi/($tolc),2,'.','') ?> </th>
            
 </tr>
 
@@ -185,6 +204,77 @@ $status= "You have supplementary examinations.";
 </section>
 </div>
 </div>
+
+
+
+
+<?php
+$data = array();
+
+// Connect to the database and fetch the data
+// $conn = mysqli_connect("host", "username", "password", "database");
+$result = mysqli_query($mysqli, "SELECT semester, cpi, spi FROM CPISPI WHERE student_reg = '$d'");
+
+// Store the data in an array
+while ($row = mysqli_fetch_array($result)) {
+    
+    $data[$row['semester']] = array("cpi" => $row['cpi'], "spi" => $row['spi']);
+}
+
+// Close the connection
+// mysqli_close($conn);
+
+// Use the Google Charts API to create the graph
+?>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester', 'CPI', 'SPI'],
+          <?php
+          foreach ($data as $semester => $values) {
+              echo "['$semester', " . $values['cpi'] . ", " . $values['spi'] . "],";
+          }
+          ?>
+        ]);
+
+        var options = {
+          title: 'CPI and SPI over Semesters',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 1000px; height: 500px"></div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </main>
 

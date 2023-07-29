@@ -1,4 +1,4 @@
- 
+<?php include('header.php');?> 
 <main id="main" class="main">
 <div class ="row">
     <div class ="col-lg-12">
@@ -31,7 +31,7 @@ require_once('config.php');
 
 
 
-    $query= "SELECT * FROM DOCTORS " ;
+    $query= "SELECT * FROM  " ;
 
     if($result= $mysqli->query($query))
     {

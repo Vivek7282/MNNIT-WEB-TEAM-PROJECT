@@ -1,5 +1,6 @@
 
 
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -47,10 +48,8 @@
       
     </div><!-- End Page Title -->
 
-
-
-
-    <?php include('header.php')?>
+    <!-- /Applications/XAMPP/xamppfiles/htdocs/Mnnit/Admin/header.php -->
+    <?php include('header.php');?>
    
 
     
@@ -234,5 +233,7 @@
 
 
 <?php include('footer.php');?>
+
+
 
 

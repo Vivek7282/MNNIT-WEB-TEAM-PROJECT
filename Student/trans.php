@@ -137,11 +137,11 @@ $PASS=1;
     ?>
     <tr>
     <?php  
-if($PASS=1)
+if($PASS==1)
 {$status="PASS";}
- else if($PASS=-1)
+ else if($PASS==-1)
  {
-$status= "You have supplementary examinations.";
+$status= "supply";
                }
               
             

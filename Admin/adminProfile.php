@@ -12,7 +12,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Medicare_Admins</span>
+        <span class="d-none d-lg-block">DEAN WEB Admins</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -48,13 +48,7 @@
 
     <div class="pagetitle">
       <h1>Profile</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Profile</li>
-        </ol>
-      </nav>
+      
     </div><!-- End Page Title -->
 
 

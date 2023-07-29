@@ -116,7 +116,8 @@ $query= "SELECT * FROM Marks_Table  where Semester='$sem' and Reg_No='$d' " ;
                     
                     
                     <th><i class="icon_profile"></i>Spi</th>
-                    <th><?php echo  $spi/$toc   ?> </th>
+                  <?php $spi1= number_format((float)$spi/$toc, 2, '.', '') ?>
+                    <th><?php echo  $spi1   ?> </th>
                    
         </tr>
         <tr>
@@ -144,11 +145,14 @@ $query= "SELECT * FROM Marks_Table  where Semester='$sem' and Reg_No='$d' " ;
 
     <!-- $status="FAIL"; -->
 <?php  
-if($PASS=1)
+if($PASS==1)
 {$status="PASS";}
- else if($PASS=-1)
+ else if($PASS==-1)
  {
-$status= "You have supplementary examinations.";
+$status= "supply";
+               }
+               else{
+                $status="Fali"; 
                }
               
             

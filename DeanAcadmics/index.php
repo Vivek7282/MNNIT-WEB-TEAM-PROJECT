@@ -108,7 +108,8 @@ $query1= "SELECT * From Message where admin=0  " ;
             while($row = $result->fetch_object())
             {
                 $info = $row->Info;
-                 echo $info;
+                // echo $info;
+                 echo "<span style='color:red;font-size: 20px;'>•</span> $info";
                  echo "  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                    ";
             }
